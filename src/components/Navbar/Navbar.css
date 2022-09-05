@@ -1,0 +1,22 @@
+nav{
+    background-color: rgb(19,17,54) !important;
+}
+nav .navbar-brand,
+.nav-link
+{
+    color: #fff;
+}
+.nav-link:hover,
+.nav-link:active,
+nav .navbar-brand:hover,
+.nav-link:focus,
+.nav-link:focus,
+nav .navbar-brand:focus{
+    color: #ccc;
+}
+.navbar-toggler{
+    background-color: transparent;
+}
+.navbar-toggler span{
+    filter: invert(1);
+}

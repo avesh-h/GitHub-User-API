@@ -1,0 +1,13 @@
+.form{
+    width: 40%;
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 8px;
+    /* border: 1px solid #ccc; */
+    background-color: #474774;
+}
+.form-text{color: #fff;}
+/* .form button.btn.btn-light a {
+    color: #000;
+    text-decoration: none;
+} */
