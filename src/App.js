@@ -25,18 +25,26 @@ import {createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut} from 
 
 function App() {
 
-  const dispatch = useDispatch();
+const dispatch = useDispatch();
 
 const [user,setUser] = useState({})
 
 const [getUserName, setUserName] = useState('')
 
 const isLoggedIn = useSelector((state)=>{
-  console.log(state.login)
+  // console.log(state.login)
   return state.login
 })
 
-
+useEffect(()=>{
+  const my_login = localStorage.getItem('LoggedIn')
+  if(my_login){
+    dispatch(createAction.login())
+  }
+  else{
+    dispatch(createAction.logout())
+  }
+},[])
 
 const register = async (data) =>{
   try{
@@ -60,17 +68,21 @@ UserName = data.loginEmail
       data.loginEmail,
       data.loginPassword)
       dispatch(createAction.login())
+      setUserName(UserName)
+      localStorage.setItem('LoggedIn','1')
     }catch(err){
       console.log(err.message)
     }
-    setUserName(UserName)
+    
+    
 }
 
 
 
 const logout = async () =>{
   await signOut(auth)
-  dispatch(createAction.login())
+  dispatch(createAction.logout())
+  localStorage.removeItem('LoggedIn')
 }
 
 useEffect(()=>{
