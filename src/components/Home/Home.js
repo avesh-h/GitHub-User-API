@@ -9,7 +9,7 @@ function Home(props) {
   return (
     <div className='home'>
       <h2>Welcome User :{User_name}</h2>
-      {/* <h5>Hello Github</h5> */}
+     
       <SearchBar />
     </div>
   )
