@@ -67,13 +67,14 @@ UserName = data.loginEmail
       auth,
       data.loginEmail,
       data.loginPassword)
-      dispatch(createAction.login())
-      setUserName(UserName)
-      localStorage.setItem('LoggedIn','1')
+
     }catch(err){
       console.log(err.message)
     }
     
+    dispatch(createAction.login())
+    setUserName(UserName)
+    localStorage.setItem('LoggedIn','1')
     
 }
 
