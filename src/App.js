@@ -29,6 +29,7 @@ import {
 
 function App() {
   const dispatch = useDispatch();
+  const baseUrl = process.env.REACT_APP_MY_URL
 
   const [user, setUser] = useState({});
 
@@ -56,7 +57,7 @@ function App() {
         data.registerPassword
       );
 
-      window.open("http://localhost:3000/login", "_self");
+      window.open(`${baseUrl}/login`, "_self");
     } catch (err) {
       toast.error('Invalid Email or Password!', {
         position: "top-right",
