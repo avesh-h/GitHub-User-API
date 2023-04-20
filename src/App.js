@@ -36,7 +36,7 @@ function App() {
   const [getUserName, setUserName] = useState("");
 
   const isLoggedIn = useSelector((state) => {
-    // console.log(state.login)
+    console.log(state.login)
     return state.login;
   });
 
